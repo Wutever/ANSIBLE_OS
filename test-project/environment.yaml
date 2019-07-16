@@ -1,0 +1,3 @@
+---
+physical_volume_device_paths2: /dev/vda1
+physical_volume_device_paths1: /dev/vdb1

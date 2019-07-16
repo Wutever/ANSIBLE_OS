@@ -1,0 +1,16 @@
+-  
+  name: ansible set up
+  hosts: computenodes
+  become: true
+  become_method: sudo
+  roles :
+    - role: setups
+      tags: "new user"
+- name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+  include_vars:
+    file: environment.yaml
+    name: stuff
+
+
+
+

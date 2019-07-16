@@ -1,0 +1,31 @@
+- 
+    name: update
+    yum:
+        name: '*'
+        state: latest
+- name: Install a list of packages
+  yum:
+    name:
+        - bridge-utils 
+        - iputils 
+        - lsof 
+        - lvm2 
+        - chrony 
+        - openssh-server 
+        - sudo 
+        - tcpdump 
+        - python
+        - lvm2
+    state: present
+- name: remove first
+  file: 
+    path: "/etc/modules-load.d/openstack-ansible.conf"
+    state: absent
+- name: load the module with conf
+  command:  bash -c 'echo "bonding" >> /etc/modules-load.d/openstack-ansible.conf'
+- name: twice
+  command:  bash -c 'echo "8021q" >> /etc/modules-load.d/openstack-ansible.conf'
+- name: Make sure chronyd.service is running
+  systemd:
+    state: started
+    name: chronyd.service
