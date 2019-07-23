@@ -6,10 +6,12 @@
   roles :
     - role: setups
       tags: "new user"
-- name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
-  include_vars:
-    file: environment.yaml
-    name: stuff
+  # roles:
+  # - geerlingguy.repo-epel
+# - name: Include vars of stuff.yaml into the 'stuff' variable (2.2).
+#   include_vars:
+#     file: environment.yaml
+#     name: stuff
 
 
 

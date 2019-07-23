@@ -1,3 +1,23 @@
+# - name: Remove repository (and clean up left-over metadata)
+#   yum_repository:
+#     name: docker
+#     state: absent
+# - name: Remove repository (and clean up left-over metadata)
+#   yum_repository:
+#     name: epel
+#     state: absent
+# - name: Add repository
+#   yum_repository:
+#     name: epel
+#     description: EPEL YUM repo
+#     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+# - 
+#     name: Disable require tty access in /etc/sudoers
+#     replace: dest="/etc/yum.repos.d/epel.repo"
+#             regexp='https'
+#             replace='http'
+- pip:
+    name: docker
 - 
     name: update
     yum:
@@ -9,23 +29,29 @@
         - bridge-utils 
         - iputils 
         - lsof 
-        - lvm2 
         - chrony 
         - openssh-server 
         - sudo 
         - tcpdump 
         - python
         - lvm2
+        - python-devel
+        - libffi-devel 
+        - gcc 
+        - openssl-devel 
+        - libselinux-python
+
     state: present
-- name: remove first
-  file: 
-    path: "/etc/modules-load.d/openstack-ansible.conf"
-    state: absent
-- name: load the module with conf
-  command:  bash -c 'echo "bonding" >> /etc/modules-load.d/openstack-ansible.conf'
-- name: twice
-  command:  bash -c 'echo "8021q" >> /etc/modules-load.d/openstack-ansible.conf'
-- name: Make sure chronyd.service is running
-  systemd:
-    state: started
-    name: chronyd.service
+
+# - name: remove first
+#   file: 
+#     path: "/etc/modules-load.d/openstack-ansible.conf"
+#     state: absent
+# - name: load the module with conf
+#   command:  bash -c 'echo "bonding" >> /etc/modules-load.d/openstack-ansible.conf'
+# - name: twice
+#   command:  bash -c 'echo "8021q" >> /etc/modules-load.d/openstack-ansible.conf'
+# - name: Make sure chronyd.service is running
+#   systemd:
+#     state: started
+#     name: chronyd.service
