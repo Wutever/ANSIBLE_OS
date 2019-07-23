@@ -1,7 +1,7 @@
-# - name: Remove repository (and clean up left-over metadata)
-#   yum_repository:
-#     name: docker
-#     state: absent
+- name: Remove repository (and clean up left-over metadata)
+  yum_repository:
+    name: docker
+    state: absent
 # - name: Remove repository (and clean up left-over metadata)
 #   yum_repository:
 #     name: epel
@@ -11,37 +11,38 @@
 #     name: epel
 #     description: EPEL YUM repo
 #     baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+# - pip:
+#     name: docker
+# - 
+#     name: update
+#     yum:
+#         name: '*'
+#         state: latest
 # - 
 #     name: Disable require tty access in /etc/sudoers
 #     replace: dest="/etc/yum.repos.d/epel.repo"
 #             regexp='https'
 #             replace='http'
-- pip:
-    name: docker
-- 
-    name: update
-    yum:
-        name: '*'
-        state: latest
-- name: Install a list of packages
-  yum:
-    name:
-        - bridge-utils 
-        - iputils 
-        - lsof 
-        - chrony 
-        - openssh-server 
-        - sudo 
-        - tcpdump 
-        - python
-        - lvm2
-        - python-devel
-        - libffi-devel 
-        - gcc 
-        - openssl-devel 
-        - libselinux-python
+# - name: Install a list of packages
+#   yum:
+#     name:
+#         - epel-release 
+#         - iputils 
+#         - lsof 
+#         - chrony 
+#         - openssh-server 
+#         - sudo 
+#         - tcpdump 
+#         - python
+#         - lvm2
+#         - python-devel
+#         - libffi-devel 
+#         - gcc 
+#         - openssl-devel 
+#         - libselinux-python
 
-    state: present
+#     state: present
+
 
 # - name: remove first
 #   file: 
