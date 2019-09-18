@@ -1,6 +1,6 @@
 -  
   name: ansible set up
-  hosts: c1
+  hosts: computenodes
   become: true
   become_method: sudo
   roles :

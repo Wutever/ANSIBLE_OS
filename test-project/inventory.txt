@@ -1,11 +1,11 @@
 [computenodes]
-c1 ansible_host=192.168.5.1 ansible_user=root
-c2 ansible_host=192.168.5.2 ansible_user=root
-c3 ansible_host=192.168.5.3 ansible_user=root
-c4 ansible_host=192.168.5.4 ansible_user=root
-c5 ansible_host=192.168.5.5 ansible_user=root
-c6 ansible_host=192.168.5.6 ansible_user=root
-c7 ansible_host=192.168.5.7 ansible_user=root
-c8 ansible_host=192.168.5.8 ansible_user=root
+c1 ansible_host=192.168.5.1 ansible_user=root ansible_password=ZJCdb960712
+c2 ansible_host=192.168.5.2 ansible_user=root ansible_password=ZJCdb960712
+c3 ansible_host=192.168.5.3 ansible_user=root ansible_password=ZJCdb960712
+c4 ansible_host=192.168.5.4 ansible_user=root ansible_password=ZJCdb960712
+c5 ansible_host=192.168.5.5 ansible_user=root ansible_password=ZJCdb960712
+c6 ansible_host=192.168.5.6 ansible_user=root ansible_password=ZJCdb960712
+c7 ansible_host=192.168.5.7 ansible_user=root ansible_password=ZJCdb960712
+c8 ansible_host=192.168.5.8 ansible_user=root ansible_password=ZJCdb960712
 [managenode]
 m1 ansible_host=192.168.5.254 ansible_user=jzhu62 ansible_password=ZJCbj2019!
